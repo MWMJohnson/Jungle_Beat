@@ -13,6 +13,12 @@ RSpec.describe LinkedList do
     expect(list.head).to eq(nil)
   end
 
+  it "apppends new data" do
+    list = LinkedList.new
+    list.append("doop")
+    expect(list.head).to eq("doop")
+  end
+
 
 
 
