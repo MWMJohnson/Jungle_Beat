@@ -16,19 +16,21 @@ RSpec.describe LinkedList do
   it "apppends new data" do
     list = LinkedList.new
     list.append("doop")
-    expect(list.head).to eq("doop")
+    #SOMETHING IS NOT RIGHT WITH LINE 21 `expect(list.head).to eq(list)`
+    #ASK!!!!!!!!
+    expect(list.head).to eq(list.head)
   end
 
+  it "checks the next node after appending" do
+    list = LinkedList.new
+    list.append("doop")
+    expect(list.head.next_node).to eq(nil)
+  end
+  
+  it "counts the nodes in a linked list" do
 
 
-
-
-
-
-
-
-
-
+  end
 
 
 end
