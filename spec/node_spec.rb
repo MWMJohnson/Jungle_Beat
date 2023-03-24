@@ -7,5 +7,11 @@ RSpec.describe Node do
     expect(node).to be_an_instance_of(Node)
   end
 
+  it "checks the data of the node" do 
+    node = Node.new("plop")
+    expect(node.data).to eq("plop")
+  end
+
+  
 
 end
