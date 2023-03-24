@@ -12,6 +12,10 @@ RSpec.describe Node do
     expect(node.data).to eq("plop")
   end
 
+  it "checks the value of the next node" do 
+    node = Node.new("plop")
+    expect(node.next_node).to eq(nil)
+  end
   
 
 end
