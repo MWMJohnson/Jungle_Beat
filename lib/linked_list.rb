@@ -4,12 +4,17 @@ class LinkedList
     @head = nil
   end
 
-  # def append(data)
-  #   if @head
-  #     @head,@head.next = Node.new(data), @head
-  #   else
-  #     @head = Node.new(data)
-  #   end
+  def append(data)
+    if @head
+      @head,@head.next_node = Node.new(data), @head
+    else
+      @head = Node.new(data)
+    end
+  end
+
+  # def count
+    
+
   # end
 
   # def insert(target, data)
