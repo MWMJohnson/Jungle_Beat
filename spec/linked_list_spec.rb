@@ -70,4 +70,32 @@ RSpec.describe LinkedList do
     list.append("deep")
     expect(list.to_string).to eq("doop deep")
   end
+
+  it "creates a new node assigned as the head node" do
+    list = LinkedList.new
+    expect(list.append("plop")).to eq("plop")
+    expect(list.to_string).to eq("plop")
+    expect(list.append("suu")).to eq("suu")
+    expect(list.prepend("dop")).to eq("dop")
+  end
+
+  it "displays the data of all nodes in a string" do
+    list = LinkedList.new
+    expect(list.append("plop")).to eq("plop")
+    expect(list.to_string).to eq("plop")
+    expect(list.append("suu")).to eq("suu")
+    expect(list.prepend("dop")).to eq("dop")
+    expect(list.to_string).to eq("dop plop suu")
+  end
+
+  # it "displays the data of all nodes in a string" do
+  #   list = LinkedList.new
+  #   expect(list.append("plop")).to eq("plop")
+  #   expect(list.to_string).to eq("plop")
+  #   expect(list.append("suu")).to eq("suu")
+  #   expect(list.prepend("dop")).to eq("dop")
+  #   expect(list.to_string).to eq("dop plop suu")
+  # end
+
+
 end
