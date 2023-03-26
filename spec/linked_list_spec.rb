@@ -98,5 +98,23 @@ RSpec.describe LinkedList do
     expect(list.count).to eq(3)
   end
 
+  # it " " do
+
+  # end
+
+  it "counts all nodes in a string" do
+    list = LinkedList.new
+    expect(list.append("plop")).to eq("plop")
+    expect(list.to_string).to eq("plop")
+    expect(list.append("suu")).to eq("suu")
+    expect(list.prepend("dop")).to eq("dop")
+    expect(list.to_string).to eq("dop plop suu")
+    expect(list.count).to eq(3)
+    expect(list.find("dop")).to eq(true)
+    expect(list.find("flop")).to eq(false)
+    list.append("flop")
+    expect(list.find("flop")).to eq(true)
+  end
+
 
 end
