@@ -1,5 +1,5 @@
-require "./lib/node"
 require "./lib/linked_list"
+require "./lib/node"
 
 RSpec.describe LinkedList do
 
@@ -13,40 +13,61 @@ RSpec.describe LinkedList do
     expect(list.head).to eq(nil)
   end
 
-  it "apppends new data to the end of the linked list" do
+  it "adds new data to the head node" do
     list = LinkedList.new
-    expect(list.append("doop").data).to eq("doop")
-    expect(list.head.data).to eq("doop")
-    list.append("wow")
-    expect(list.head.data).to eq("doop")
-    
+    expect(list.append("doop")).to eq("doop")
   end
 
-  it "checks the next node after appending" do
+  it "checks the value of the next node" do
     list = LinkedList.new
     list.append("doop")
-    # expect(list.append("doop").data).to eq("doop")
     expect(list.head.data).to eq("doop")
     expect(list.head.next_node).to eq(nil)
-    list.append("wow")
-    expect(list.head.next_node.data).to eq("wow")
-    
   end
   
-  it "counts the nodes in a linked list" do
+  it "counts a node" do
+    list = LinkedList.new
+    expect(list.count).to eq(0)
+    list.append("doop")
+    expect(list.count).to eq(1)
+  end
+
+  it "converts a node to a string" do
+    list = LinkedList.new
+    list.append("doop")
+    expect(list.to_string).to eq("doop")
+  end
+
+  it "adds a new node" do
+    list = LinkedList.new
+    expect(list.head).to eq(nil)
+    expect(list.append("doop")).to eq("doop")
+    # expect(list).to eq(list)???????????????????????
+    # expect(list.head).to eq(head)??????????????????
+    expect(list).to be_an_instance_of(LinkedList)
+    expect(list.head.data).to eq("doop")
+    expect(list.head.next_node).to eq(nil)
+    list.append("deep")
+    expect(list.head.next_node.data).to eq("deep")
+    # expect(list.head.next_node).to eq(list.head.next_node)?????????????
+  end
+
+  it "counts multiple nodes" do
     list = LinkedList.new
     expect(list.head).to eq(nil)
     expect(list.count).to eq(0)
-    list.append("doop")
-    expect(list.head.next_node).to eq(nil)
-    expect(list.head.data).to eq("doop")
+    expect(list.append("doop")).to eq("doop")
     expect(list.count).to eq(1)
-    list.append("wow")
-    expect(list.head.next_node.data).to eq("wow")
+    list.append("deep")
     expect(list.count).to eq(2)
-    list.append("say")
-    expect(list.count).to eq(3)
   end
 
-
+  it "converts all nodes to one string" do
+    list = LinkedList.new
+    expect(list.head).to eq(nil)
+    list.append("doop")
+    expect(list.to_string).to eq("doop")
+    list.append("deep")
+    expect(list.to_string).to eq("doop deep")
+  end
 end
