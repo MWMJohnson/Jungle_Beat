@@ -5,68 +5,28 @@ class LinkedList
   end
 
   def append(data)
-    if @head
-      @head,@head.next_node = Node.new(data), @head
-    else
+    if @head == nil
       @head = Node.new(data)
+    else
+      current_node = @head
+      while(!current_node.next_node.nil?)
+        current_node = current_node.next_node
+      end
+      current_node.next_node = Node.new(data)
     end
   end
 
-  # def count
-    
+  def count
+    current_node = @head
+    counter = 0
+    until current_node.nil?
+      current_node = current_node.next_node
+      counter += 1
+    end
+    counter
+  end
 
-  # end
 
-  # def insert(target, data)
-  #   node     = find(target)
-
-
-  #   return unless node
-  #   old_next = node.next
-  #   node.next = Node.new(data)
-  #   node.next.next = old_next
-  # end
-
-  # def find(data)
-  #   node = @head
-
-  #   return node if node.data == data
-  #   return false if !node.next
-
-  #   while (node = node.next)
-  #     return if node.data == data
-  #   end
-  # end
-
-  # def delete(data)
-  #   if @head.data == data
-  #     @head = @head.next
-  #     return
-  #   end
-
-  #   node    = find_before(data)
-  #   node.next = node.next.next
-  # end
-
-  # def find_before(data)
-  #   node = @head
-
-  #   return false if !node.next
-  #   return node if node.next.data == data
-
-  #   while (node = node.next)
-  #     return if node.next.data == data
-  #   end
-  # end
-
-  # def print
-  #   node = @head
-  #   puts node
-
-  #   while (node = node.next)
-  #     puts node
-  #   end
-  # end
 
 
 end
