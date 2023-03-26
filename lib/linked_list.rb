@@ -23,7 +23,7 @@ class LinkedList
       current_node = current_node.next_node
       counter += 1
     end
-    counter
+    counter 
   end
 
 
