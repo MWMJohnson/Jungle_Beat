@@ -5,7 +5,7 @@ class LinkedList
   end
 
   def append(data)
-    if @head == nil
+    if @head.nil?
       @head = Node.new(data)
       data
     else
@@ -14,25 +14,32 @@ class LinkedList
       # start pointer at head
       # we need to keep cycling until the pointer.next_node == nil.
       # create a new node and add data to that node.
-      
       current_node = @head
       # require 'pry'; binding.pry
         while current_node.next_node != nil
-        
           current_node = current_node.next_node
           # require 'pry'; binding.pry
         end
-        
-      current_node.append_next_node(Node.new(data))
+      current_node.next_node=(Node.new(data))
+      data
       # require 'pry'; binding.pry
-
-
-
       # current_node = @head
       # while(!current_node.next_node.nil?)
       #   current_node = current_node.next_node
       # end
       # current_node.next_node = Node.new(data)
+    end
+  end
+
+  def prepend(data)
+    if @head.nil?
+      @head = Node.new(data)
+      data
+    else
+      current_node = @head
+      @head = Node.new(data)
+      @head.next_node = current_node
+      data
     end
   end
 
