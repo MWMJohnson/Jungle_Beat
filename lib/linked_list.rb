@@ -67,6 +67,30 @@ class LinkedList
     end
     beats.join(" ")
   end
+
+  def insert(index, data)
+    current_node = @head
+    counter = 1
+    until current_node.nil?
+      current_node = current_node.next_node
+      counter += 1
+    end
+   
+
+  end
+
+  def find(data)
+    current_node = @head
+    while(current_node != nil)
+      if(current_node.data == data)
+        return true
+      end
+      current_node = current_node.next_node
+    end
+    false
+  end
+
+
 end
 
 
