@@ -133,5 +133,16 @@ RSpec.describe LinkedList do
     expect(list.includes?("flop")).to eq(true)
   end
 
+  it "displays all nodes in the correct order after inserting a new node" do
+    list = LinkedList.new
+    expect(list.append("deep")).to eq("deep")
+    expect(list.append("woo")).to eq("woo")
+    expect(list.append("shi")).to eq("shi")
+    expect(list.append("shu")).to eq("shu")
+    expect(list.append("blop")).to eq("blop")
+    expect(list.to_string).to eq("deep woo shi shu blop")
+    # expect(list.find(2, 1)).to eq("shi")
+  end
+
 
 end
