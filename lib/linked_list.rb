@@ -71,15 +71,23 @@ class LinkedList
   def insert(index, data)
     current_node = @head
     counter = 1
-    until current_node.nil?
-      current_node = current_node.next_node
+    require 'pry'; binding.pry
+    while(counter != index)
       counter += 1
+      current_node = current_node.next_node
+    # while(current_node.data != data)
+      # if(counter == index)
+      #   return 
+      end
+      
+      # current_node = current_node.next_node
+      # counter += 1
     end
-   
-
+    current.node
+    data
   end
 
-  def find(data)
+  def includes?(data)
     current_node = @head
     while(current_node != nil)
       if(current_node.data == data)
