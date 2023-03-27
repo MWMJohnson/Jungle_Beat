@@ -98,11 +98,20 @@ RSpec.describe LinkedList do
     expect(list.count).to eq(3)
   end
 
-  # it " " do
 
-  # end
+  it "inserts a new node" do
+    list = LinkedList.new
+    expect(list.append("plop")).to eq("plop")
+    expect(list.append("suu")).to eq("suu")
+    expect(list.prepend("dop")).to eq("dop")
+    expect(list.to_string).to eq("dop plop suu")
+    require 'pry'; binding.pry
+    expect(list.insert(1, "woo")).to eq("woo")
+    expect(list.to_string).to eq("dop woo plop suu")
+  end
 
-  it "counts all nodes in a string" do
+
+  it "confirms if a node is included in the linked list" do
     list = LinkedList.new
     expect(list.append("plop")).to eq("plop")
     expect(list.to_string).to eq("plop")
@@ -110,10 +119,10 @@ RSpec.describe LinkedList do
     expect(list.prepend("dop")).to eq("dop")
     expect(list.to_string).to eq("dop plop suu")
     expect(list.count).to eq(3)
-    expect(list.find("dop")).to eq(true)
-    expect(list.find("flop")).to eq(false)
+    expect(list.includes?("dop")).to eq(true)
+    expect(list.includes?("flop")).to eq(false)
     list.append("flop")
-    expect(list.find("flop")).to eq(true)
+    expect(list.includes?("flop")).to eq(true)
   end
 
 
