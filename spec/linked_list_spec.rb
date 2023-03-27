@@ -105,7 +105,6 @@ RSpec.describe LinkedList do
     expect(list.append("suu")).to eq("suu")
     expect(list.prepend("dop")).to eq("dop")
     expect(list.to_string).to eq("dop plop suu")
-    require 'pry'; binding.pry
     expect(list.insert(1, "woo")).to eq("woo")
     expect(list.to_string).to eq("dop woo plop suu")
   end

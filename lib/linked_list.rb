@@ -77,52 +77,26 @@ class LinkedList
       @head = Node.new(data)
       @head.next_node = current_node
       data
+    elsif index == 1
+      place_holder = current_node.next_node
+      insert_node = Node.new(data)
+      current_node.next_node = insert_node
+      insert_node.next_node = place_holder
     else
-      while counter =! index
-        counter +=1
-        current_node = current_node.next_node
-      end
+      current_node = @head
+      counter = 1
+        until counter == index
+          counter += 1
+          current_node = current_node.next_node
+        end
       place_holder = current_node.next_node
       insert_node = Node.new(data)
       current_node.next_node = insert_node
       insert_node.next_node = place_holder
     end
-    # place_holder = current_node.next_node
-    # insert_node = Node.new(data)
-    # current_node.next_node = insert_node
-    # insert_node.next_node = placeholder
-      # @head.next_node = Node.new(data)
-      # @head = current_node
-      # current_node = @head.next_node.next_node
-      # data
-    # else
-    #   while(counter != index)
-    #     counter += 1
-    #     current_node = current_node.next_node
-    #   end
     insert_node
     data
-   
   end
-
-  # def insert(index, data)
-  #   current_node = @head
-  #   counter = 1
-  #   require 'pry'; binding.pry
-  #   while(counter != index)
-  #     counter += 1
-  #     current_node = current_node.next_node
-  #   # while(current_node.data != data)
-  #     # if(counter == index)
-  #     #   return 
-  #     end
-      
-  #     # current_node = current_node.next_node
-  #     # counter += 1
-  #   end
-  #   current.node
-  #   data
-  # end
 
   def includes?(data)
     current_node = @head
