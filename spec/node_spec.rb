@@ -1,3 +1,4 @@
+require "rspec"
 require "./lib/node"
 
 RSpec.describe Node do
@@ -7,13 +8,9 @@ RSpec.describe Node do
     expect(node).to be_an_instance_of(Node)
   end
 
-  it "checks the data of the node" do 
+  it "has readable attributes" do 
     node = Node.new("plop")
     expect(node.data).to eq("plop")
-  end
-
-  it "checks the value of the next node" do 
-    node = Node.new("plop")
     expect(node.next_node).to eq(nil)
   end
   
