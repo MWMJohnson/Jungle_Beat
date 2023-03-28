@@ -141,17 +141,17 @@ RSpec.describe LinkedList do
     expect(list.includes?("dep")).to be(false)
   end
 
-  it "confirms if a node is included in the linked list" do
+
+  it "pops a node of the linked list" do 
     list = LinkedList.new
     expect(list.append("deep")).to eq("deep")
     expect(list.append("woo")).to eq("woo")
     expect(list.append("shi")).to eq("shi")
     expect(list.append("shu")).to eq("shu")
     expect(list.append("blop")).to eq("blop")
-    expect(list.includes?("deep")).to be(true)
-    expect(list.includes?("dep")).to be(false)
+    expect(list.pop).to eq("blop")
+    expect(list.pop).to eq("shu")
+    expect(list.to_string).to eq("deep woo shi")
   end
-
-
 
 end
