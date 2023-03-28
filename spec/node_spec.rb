@@ -17,5 +17,11 @@ RSpec.describe Node do
     expect(node.next_node).to eq(nil)
   end
   
+  it "changes the value of the next node" do
+    node = Node.new("plop")
+    new_node = Node.new("woo")
+    node.next_node=(new_node)
+    expect(node.next_node).to eq(new_node)
+  end
 
 end
