@@ -118,7 +118,22 @@ class LinkedList
       data.rstrip
   end
 
-
+  def pop
+    if @head == nil
+      false
+    else
+      data = ""
+      removed_node = ""
+      current_node = @head
+      return false if @head == nil
+      until current_node.next_node.next_node == nil
+        current_node = current_node.next_node
+      end
+      new_tail = current_node.next_node
+      current_node.next_node = nil
+      new_tail.data
+    end
+  end
 end
 
 
