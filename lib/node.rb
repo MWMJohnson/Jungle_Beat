@@ -12,5 +12,4 @@ class Node
   def next_node=(node) 
     @next_node = node
   end
-
 end
