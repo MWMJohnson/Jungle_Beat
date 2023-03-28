@@ -19,7 +19,7 @@ class JungleBeat
 
   def play
     beats = list.to_string
-    `say -r 150 -v Daniel #{beats}`
+    `say -r 100 -v Daniel #{beats}`
   end
 
 end

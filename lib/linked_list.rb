@@ -5,7 +5,7 @@ class LinkedList
   end
 
   def append(data)
-    if @head.nil?
+    if @head == nil
       @head = Node.new(data)
       data
     else
@@ -19,7 +19,7 @@ class LinkedList
   end
 
   def prepend(data)
-    if @head.nil?
+    if @head == nil
       @head = Node.new(data)
       data
     else
@@ -33,7 +33,7 @@ class LinkedList
   def count
     current_node = @head
     counter = 0
-    until current_node.nil?
+    until current_node == nil
       current_node = current_node.next_node
       counter += 1
     end
@@ -43,7 +43,7 @@ class LinkedList
   def to_string
     beats = ""
     current_node = @head
-    if current_node.nil?
+    if current_node == nil
     beats
     else
       while current_node.next_node != nil
@@ -87,7 +87,7 @@ class LinkedList
 
   def includes?(data)
     current_node = @head
-    while(current_node != nil)
+    until(current_node == nil)
       if(current_node.data == data)
         return true
       end
@@ -112,8 +112,8 @@ class LinkedList
     counter = 0
     until counter == range
       data += "#{current_node.data} "
-      counter += 1
       current_node = current_node.next_node
+      counter += 1
     end
       data.rstrip
   end
@@ -122,8 +122,6 @@ class LinkedList
     if @head == nil
       false
     else
-      data = ""
-      removed_node = ""
       current_node = @head
       return false if @head == nil
       until current_node.next_node.next_node == nil
