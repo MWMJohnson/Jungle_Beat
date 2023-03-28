@@ -24,7 +24,7 @@ class JungleBeat
   end
 
   def all
-    list.to_string
+    list.to_string 
   end
 
 end
