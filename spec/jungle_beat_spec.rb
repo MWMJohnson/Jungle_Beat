@@ -49,6 +49,10 @@ RSpec.describe JungleBeat do
     jb = JungleBeat.new("deep")
     expect(jb.list.head.data).to eq("deep")
   end
-
+ 
+  it "returns all nodes as one string" do
+    jb = JungleBeat.new("deep")
+    expect(jb.all).to eq("deep")
+  end
 
 end
