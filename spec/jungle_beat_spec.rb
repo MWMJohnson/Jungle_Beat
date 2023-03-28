@@ -45,4 +45,10 @@ RSpec.describe JungleBeat do
     jb.play #plays the sounds deep doo ditt woo hoo shu
   end
 
+  it "can append a new data when initialized" do
+    jb = JungleBeat.new("deep")
+    expect(jb.list.head.data).to eq("deep")
+  end
+
+
 end
