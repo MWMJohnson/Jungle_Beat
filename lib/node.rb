@@ -5,6 +5,10 @@ class Node
     @next_node = nil
   end
 
+  def data=(dat) 
+    @data = dat
+  end
+
   def next_node=(node) 
     @next_node = node
   end
