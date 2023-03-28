@@ -9,7 +9,6 @@ class JungleBeat
     sound_strings = sound_string.split
     sound_strings.each do |sound_string|
       list.append(sound_string)
-      
     end
     list.to_string
   end
@@ -26,5 +25,4 @@ class JungleBeat
   def all
     list.to_string 
   end
-
 end
